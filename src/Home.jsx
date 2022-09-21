@@ -12,8 +12,11 @@ const Home = () => {
     <div>
       <Todo />
 
-      {Todos.length > 0 &&
-        Todos.map((todo) => <TodoList key={todo} todo={todo} />)}
+      {Todos.length > 0?
+        Todos.map((todo) => <TodoList key={todo.id} todo={todo} />)
+      :
+      <p className="complete-empty">ADD TO LIST</p>
+      }
     </div>
   );
 };

@@ -6,7 +6,7 @@ const Sidebar = ({ setshow, show }) => {
   return (
     <div className={show ? "side-bar active" : "side-bar"}>
       <AiOutlineClose
-      onClick={()=>setshow(false)}
+        onClick={() => setshow(false)}
         style={{
           padding: "20px",
           fontSize: "20px",
@@ -15,8 +15,12 @@ const Sidebar = ({ setshow, show }) => {
         }}
       />
       <div className="side-bar-links">
-        <Link to="/">Home</Link>
-        <Link to="completed">Completed</Link>
+        <Link onClick={() => setshow(false)} to="/">
+          Home
+        </Link>
+        <Link onClick={() => setshow(false)} to="completed">
+          Completed
+        </Link>
       </div>
     </div>
   );

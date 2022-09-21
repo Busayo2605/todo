@@ -3,24 +3,26 @@ import { TodoContext } from "./AppContext";
 
 const Todo = () => {
   const [inputValue, setinputValue] = useState("");
-  const [error, seterror] = useState('')
-  const { addtoList } = useContext(TodoContext);
+  const [error, seterror] = useState("");
+  const {
+    addtoList,
+  } = useContext(TodoContext);
+
   const InputRef = useRef(null);
   useEffect(() => {
     InputRef.current.focus();
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue !== '') {
+    if (inputValue !== "") {
       addtoList(inputValue);
-    }else{
-      seterror('Use the input field')
+    } else {
+      seterror("Use the input field");
       setTimeout(() => {
-        seterror('')
+        seterror("");
       }, 2000);
     }
-   
-    setinputValue('');
+    setinputValue("");
   };
   return (
     <form onSubmit={handleSubmit}>

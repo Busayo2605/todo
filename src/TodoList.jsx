@@ -10,7 +10,7 @@ const TodoList = ({ todo }) => {
   };
   return (
     <div className="todo-list">
-      <p key={todo}>{todo}</p>
+      <p >{todo.title}</p>
 
       <AiOutlineClose
         onClick={() => handleComplete(todo)}

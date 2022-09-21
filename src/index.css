@@ -115,15 +115,20 @@ input {
 }
 
 .complete{
- 
   text-decoration: line-through;
 }
 
 .complete-empty{
   text-align: center;
   color: grey;
-  font-size: larger;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5em;
+  font-family: cursive;
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
 }
 
 .clear{
@@ -145,11 +150,17 @@ input {
 
 @keyframes TODO {
   form{
-    /* opacity: 0; */
     transform: translateY(-30%);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media screen and (max-width: 700px) {
+  .side-bar {
+    width: 43%;
+  }
+  
 }

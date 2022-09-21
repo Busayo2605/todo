@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { TodoContext } from "./AppContext";
 
 const Complet = () => {
-  const {clear,
+  const {
+    clear,
     state: { complete },
   } = useContext(TodoContext);
 
@@ -10,17 +11,18 @@ const Complet = () => {
     <div>
       {complete.length > 0 ? (
         complete.map((item) => (
-          <div key={item} className="todo-list complete">
-            <p>{item}</p>
+          <div key={item[0].id} className="todo-list complete">
+            <p key={item.id}>{item[0].title}</p>
           </div>
         ))
       ) : (
         <p className="complete-empty">EMPTY LIST</p>
       )}
-{
-  complete.length > 0 &&
-      <button onClick={()=> clear()} className="clear">Clear</button>
-}
+      {complete.length > 0 && (
+        <button onClick={() => clear()} className="clear">
+          Clear
+        </button>
+      )}
     </div>
   );
 };
