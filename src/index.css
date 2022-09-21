@@ -116,6 +116,7 @@ input {
 
 .complete{
   text-decoration: line-through;
+  color: red;
 }
 
 .complete-empty{
